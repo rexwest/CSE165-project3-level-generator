@@ -285,7 +285,7 @@ def generate_gate(t, paths, intervals):
 	up = normalize3(cross3(right, tan_1))
 
 	#Create a gate
-	return Gate(curr_point, scale3(right, GATE_WIDTH), scale3(up, GATE_HEIGHT))
+	return Gate(curr_point, scale3(right, GATE_WIDTH/2.0), scale3(up, GATE_HEIGHT/2.0))
 
 
 def sample_paths(t, paths, intervals):
@@ -415,15 +415,15 @@ if __name__ == "__main__":
     #Pass them to globals
     OUTPUT_FILE_PATH = options.OUTPUT_FILE_PATH
     DEBUG = options.DEBUG
-    WORLD_SIZE = options.WORLD_SIZE
-    WORLD_MARGIN = options.WORLD_MARGIN
-    GATE_COUNT = options.GATE_COUNT
-    GATE_WIDTH = options.GATE_WIDTH
-    GATE_HEIGHT = options.GATE_HEIGHT
-    PATH_COUNT = options.PATH_COUNT
-    PATH_CONTROL_POINT_MIN = options.PATH_CONTROL_POINT_MIN #Should be >= 3
-    PATH_CONTROL_POINT_MAX = options.PATH_CONTROL_POINT_MAX
-    PATH_CONTROL_POINT_SPREAD = options.PATH_CONTROL_POINT_SPREAD
+    WORLD_SIZE = int(options.WORLD_SIZE)
+    WORLD_MARGIN = int(options.WORLD_MARGIN)
+    GATE_COUNT = int(options.GATE_COUNT)
+    GATE_WIDTH = int(options.GATE_WIDTH)
+    GATE_HEIGHT = int(options.GATE_HEIGHT)
+    PATH_COUNT = int(options.PATH_COUNT)
+    PATH_CONTROL_POINT_MIN = int(options.PATH_CONTROL_POINT_MIN) #Should be >= 3
+    PATH_CONTROL_POINT_MAX = int(options.PATH_CONTROL_POINT_MAX)
+    PATH_CONTROL_POINT_SPREAD = float(options.PATH_CONTROL_POINT_SPREAD)
 
     #Generate a level!
     generate_level()
