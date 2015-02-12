@@ -1,13 +1,8 @@
 ###############################################################################
-# Level Generator for CSE 165 Space Salmon
+# Level Generator for UCSD CSE 165 Space Salmon
 # 
 # Parameters:
-#     -gates:
-#     -
-#     -
-#     -
-#     -
-#     -
+#     -See github readme, or below
 # 
 # Output File Format:
 # 
