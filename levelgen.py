@@ -155,7 +155,7 @@ def point_on_spline(points, t):
 	r = Vector3()
 	t = clampf(t, 0.0, 1.0)
 
-	n = len(points)
+	n = len(points)-1
 	i = 0
 
 	for point in points:
@@ -344,6 +344,12 @@ def generate_paths():
 		start_point = path[-1]
 		next_point = next_tangent_sample(path[-2], path[-1])
 		paths.append(path)
+
+	if DEBUG:
+		for path in paths:
+			print "Path:"
+			for point in path:
+				print "\t", point.x, point.y, point.z
 
 	return paths
 
